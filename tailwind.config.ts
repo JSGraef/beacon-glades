@@ -1,0 +1,78 @@
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        udisc: "#e8743b",
+        facebook: "#1877f2",
+        "on-secondary-fixed-variant": "#394c34",
+        "background": "#f9faf2",
+        "surface-container-lowest": "#ffffff",
+        "on-surface": "#191c18",
+        "primary": "#154212",
+        "inverse-surface": "#2e312c",
+        "on-primary-fixed": "#002201",
+        "on-tertiary": "#ffffff",
+        "on-primary": "#ffffff",
+        "surface-tint": "#3b6934",
+        "on-tertiary-fixed": "#3b0520",
+        "surface-variant": "#e2e3dc",
+        "tertiary-fixed-dim": "#ffb0cc",
+        "tertiary-fixed": "#ffd9e4",
+        "tertiary": "#60233e",
+        "surface-dim": "#d9dbd3",
+        "on-secondary-fixed": "#0f1f0c",
+        "surface": "#f9faf2",
+        "inverse-on-surface": "#f0f1ea",
+        "secondary": "#50644a",
+        "primary-fixed": "#bcf0ae",
+        "on-error": "#ffffff",
+        "surface-container": "#edefe7",
+        "on-primary-container": "#9dd090",
+        "surface-container-highest": "#e2e3dc",
+        "surface-container-low": "#f3f4ed",
+        "on-surface-variant": "#42493e",
+        "secondary-fixed": "#d3e9c9",
+        "outline-variant": "#c2c9bb",
+        "outline": "#72796e",
+        "surface-container-high": "#e7e9e1",
+        "on-tertiary-fixed-variant": "#71314c",
+        "on-secondary-container": "#54684e",
+        "secondary-container": "#d0e6c6",
+        "on-secondary": "#ffffff",
+        "primary-container": "#2d5a27",
+        "primary-fixed-dim": "#a1d494",
+        "surface-bright": "#f9faf2",
+        "error": "#ba1a1a",
+        "error-container": "#ffdad6",
+        "on-background": "#191c18",
+        "tertiary-container": "#7c3a55",
+        "on-tertiary-container": "#ffaac8",
+        "inverse-primary": "#a1d494",
+        "on-error-container": "#93000a",
+        "secondary-fixed-dim": "#b7cdae",
+        "on-primary-fixed-variant": "#23501e"
+      },
+      fontFamily: {
+        "headline": ["var(--font-jakarta)"],
+        "body": ["var(--font-work)"],
+        "label": ["var(--font-work)"]
+      },
+      borderRadius: {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "2xl": "1rem",
+        "3xl": "1.5rem",
+        "full": "9999px"
+      },
+    },
+  },
+  plugins: [],
+};
+export default config;
