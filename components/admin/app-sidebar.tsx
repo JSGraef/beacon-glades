@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, PackageSearch } from "lucide-react";
+import { LayoutDashboard, PackageSearch, Settings } from "lucide-react";
 
+import { SignOutButton } from "@/app/admin/_components/sign-out-button";
 import {
   Sidebar,
   SidebarContent,
@@ -30,9 +31,18 @@ const navigation = [
     href: "/admin/lost-and-found",
     icon: PackageSearch,
   },
+  {
+    title: "Settings",
+    href: "/admin/settings",
+    icon: Settings,
+  },
 ] as const;
 
-export function AppSidebar() {
+export function AppSidebar({
+  userEmail,
+}: {
+  userEmail: string | null;
+}) {
   const pathname = usePathname();
 
   return (
@@ -79,7 +89,19 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
-        <div className="h-4" />
+        <div className="flex flex-col gap-2 px-2 pb-2 group-data-[collapsible=icon]:hidden">
+          {userEmail ? (
+            <div className="flex flex-col gap-0.5 rounded-md border border-sidebar-border bg-sidebar-accent/40 px-2 py-1.5">
+              <span className="text-[10px] uppercase tracking-wide text-sidebar-foreground/60">
+                Signed in as
+              </span>
+              <span className="truncate text-xs font-medium text-sidebar-foreground">
+                {userEmail}
+              </span>
+            </div>
+          ) : null}
+          <SignOutButton />
+        </div>
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
