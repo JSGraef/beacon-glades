@@ -33,8 +33,7 @@ export default async function Home() {
           <img
             alt="View of Hole 1 at Beacon Glades"
             className="w-full h-full object-cover"
-            src="https://lh3.googleusercontent.com/aida/ADBb0uie2sb_Y_DRfXTVV4CofolU00zmwuxm3O4kkzmai6BKX_a6FkMWKOwzz7upNPzN7zWmlXVD-U8WzleHhZSCgyZX0PNthXv9XpEuzDg3FT9d29wIBugHNc5Kfocm18AhEpUPWLue3ujnAiTunpmHaLIwMIcyqfaJwKwc5o6SDUqjFe-UXJirP6bgw48YNI3m7CUeHQI35yPoKG8UW0K47CDH2vWbjgn9HhDrpIr4dmYmDM6MUkLzZd5nIx_MamA_KxsK9cw0_1ht"
-            referrerPolicy="no-referrer"
+            src="/images/abandonedcamp.png"
           />
           <div className="absolute inset-0 bg-black/40 md:bg-gradient-to-r md:from-black/70 md:to-transparent"></div>
         </div>
@@ -54,7 +53,7 @@ export default async function Home() {
         <div className="flex flex-col gap-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             <div
-              className="@container block cursor-pointer overflow-hidden rounded-2xl bg-udisc shadow-none transition-shadow duration-300 hover:shadow-[0_0_36px_-10px_theme(colors.udisc/58)]"
+              className="@container block cursor-pointer overflow-hidden rounded-[1rem] bg-udisc shadow-none transition-shadow duration-300 hover:shadow-[0_0_36px_-10px_theme(colors.udisc/58)]"
             >
               <a
                 className="flex flex-col gap-8 p-8 sm:p-10 @min-[32rem]:flex-row @min-[32rem]:items-center @min-[32rem]:justify-between"
@@ -85,7 +84,7 @@ export default async function Home() {
               </a>
             </div>
             <div
-              className="block cursor-pointer rounded-2xl bg-facebook p-8 sm:p-10 shadow-none transition-shadow duration-300 hover:shadow-[0_0_36px_-10px_theme(colors.facebook/58)]"
+              className="block cursor-pointer rounded-[1rem] bg-facebook p-8 sm:p-10 shadow-none transition-shadow duration-300 hover:shadow-[0_0_36px_-10px_theme(colors.facebook/58)]"
             >
               <a
                 className="block text-left"
@@ -104,7 +103,7 @@ export default async function Home() {
             </div>
           </div>
 
-          <div className="bg-primary text-on-primary rounded-2xl p-8 sm:p-10 flex flex-col md:flex-row md:items-start gap-8 relative overflow-hidden">
+          <div className="bg-primary text-on-primary rounded-[1rem] p-8 sm:p-10 flex flex-col md:flex-row md:items-start gap-8 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary-container rounded-full blur-3xl opacity-20 -mr-32 -mt-32"></div>
             <div className="min-w-0 flex-[2] relative z-10">
               <div className="flex items-center gap-3 mb-4">
@@ -164,14 +163,13 @@ export default async function Home() {
               </div>
             </div>
             <div className="flex-1 w-full">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
+              <div className="relative rounded-[1.5rem] overflow-hidden shadow-2xl aspect-[4/3]">
                 <img
                   alt="Disc golf basket in a pine forest glade"
                   className="w-full h-full object-cover"
-                  src="https://lh3.googleusercontent.com/aida/ADBb0ujOcMTbwRg-9ju9RF0zxo8Mey2C49dCIv-kxUhx27hzfutIIk2y7qnwdNzbatSI_cIerwzidoqLrLWB42hDckYXil20YbBLTPUj_3bTQw6zmcYuqTOjjqvNaLhO0fGMCe3qTmv2gjOQzMy3aR-rnABZkvNK1Vxczwwrg1i8DlR1z-IMQ6saXbTZV2PQwHowGnDMy-uK5G_a1sQOg-2bLOLF4HMiFxmmBFMSzP3odQtTI4MiA7k4x-Q_PWLbBLML-tuFBSfku1a8HQ"
-                  referrerPolicy="no-referrer"
+                  src="/images/pines.jpg"
                 />
-                <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-3xl"></div>
+                <div className="absolute inset-0 rounded-[1.5rem] ring-1 ring-inset ring-black/10"></div>
               </div>
             </div>
           </div>
