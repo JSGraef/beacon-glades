@@ -18,7 +18,7 @@ const STATUS_META: Record<
 > = {
   saving: {
     label: "Please save it",
-    description: "We&apos;ll hold onto it for you.",
+    description: "We'll hold onto it for you.",
   },
   donated: {
     label: "Donate it",
@@ -91,10 +91,9 @@ export function PublicItemForm({
             />
             <span className="flex flex-col">
               <span className="text-sm font-medium">{STATUS_META[s].label}</span>
-              <span
-                className="text-xs text-muted-foreground"
-                dangerouslySetInnerHTML={{ __html: STATUS_META[s].description }}
-              />
+              <span className="text-xs text-muted-foreground">
+                {STATUS_META[s].description}
+              </span>
             </span>
           </label>
         ))}

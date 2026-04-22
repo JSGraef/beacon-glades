@@ -47,10 +47,16 @@ export async function listPathnames(prefix: string): Promise<string[]> {
   return out;
 }
 
-export async function deletePath(pathname: string): Promise<void> {
+export async function delJson(pathname: string): Promise<void> {
   try {
     await del(pathname);
-  } catch {
-    // ignore
+  } catch (err) {
+    if (err instanceof BlobNotFoundError) {
+      return;
+    }
+    if (err instanceof Error && /not ?found/i.test(err.message)) {
+      return;
+    }
+    throw err;
   }
 }

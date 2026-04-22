@@ -1,5 +1,5 @@
 import { DEFAULT_SETTINGS, settingsSchema, type Settings } from "./types";
-import { getJson, putJson } from "./storage";
+import { getJson, putJson } from "@/lib/blob";
 import { SETTINGS_PATH } from "./slug";
 
 export async function getSettings(): Promise<Settings> {

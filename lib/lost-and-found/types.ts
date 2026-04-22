@@ -14,7 +14,6 @@ export const PUBLIC_SELECTABLE_STATUSES = ["saving", "donated", "returned"] as c
 export type PublicSelectableStatus = (typeof PUBLIC_SELECTABLE_STATUSES)[number];
 
 export const MESSAGE_DIRECTIONS = ["outbound", "inbound"] as const;
-export type MessageDirection = (typeof MESSAGE_DIRECTIONS)[number];
 
 export const messageSchema = z.object({
   direction: z.enum(MESSAGE_DIRECTIONS),
@@ -72,8 +71,6 @@ export const newItemInputSchema = z.object({
     .transform((v) => (v === undefined || v === "" ? "" : v)),
 });
 
-export type NewItemInput = z.infer<typeof newItemInputSchema>;
-
 export const publicUpdateInputSchema = z.object({
   status: z.enum(PUBLIC_SELECTABLE_STATUSES),
   notes: z
@@ -83,8 +80,6 @@ export const publicUpdateInputSchema = z.object({
     .optional()
     .transform((v) => (v === undefined || v === "" ? "" : v)),
 });
-
-export type PublicUpdateInput = z.infer<typeof publicUpdateInputSchema>;
 
 export const adminStatusUpdateSchema = z.object({
   status: z.enum(ITEM_STATUSES),
@@ -96,8 +91,6 @@ export const adminStatusUpdateSchema = z.object({
     .transform((v) => (v === undefined ? "" : v)),
 });
 
-export type AdminStatusUpdate = z.infer<typeof adminStatusUpdateSchema>;
-
 export const settingsInputSchema = z.object({
   defaultMessage: z.string().trim().min(1, "Default message is required").max(1000),
   daysUntilExpiration: z.coerce
@@ -106,5 +99,3 @@ export const settingsInputSchema = z.object({
     .positive("Days must be greater than 0")
     .max(365, "Max 365 days"),
 });
-
-export type SettingsInput = z.infer<typeof settingsInputSchema>;

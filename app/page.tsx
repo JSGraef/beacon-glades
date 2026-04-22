@@ -2,6 +2,11 @@ import { Hand, Trees } from "lucide-react";
 import Image from "next/image";
 import QRCode from "qrcode";
 
+import { EventsSection } from "@/app/_components/events-section";
+import { NotificationBanner } from "@/app/_components/notification-banner";
+import { listUpcomingEvents } from "@/lib/homepage/events";
+import { getNotification } from "@/lib/homepage/notification";
+
 const UDISC_COURSE_MAPS_URL = "https://app.udisc.com/applink/course/2609";
 const UDISC_CARD_ORANGE = "#e8743b";
 
@@ -14,18 +19,19 @@ function FacebookIcon({ className }: { className?: string }) {
 }
 
 export default async function Home() {
-  const courseMapsQrSvg = await QRCode.toString(UDISC_COURSE_MAPS_URL, {
-    color: { dark: "#ffffff", light: UDISC_CARD_ORANGE },
-    margin: 0,
-    type: "svg",
-    width: 132,
-  });
+  const [courseMapsQrSvg, notification, upcomingEvents] = await Promise.all([
+    QRCode.toString(UDISC_COURSE_MAPS_URL, {
+      color: { dark: "#ffffff", light: UDISC_CARD_ORANGE },
+      margin: 0,
+      type: "svg",
+      width: 132,
+    }),
+    getNotification(),
+    listUpcomingEvents(),
+  ]);
   return (
     <main className="min-h-screen bg-background text-on-surface">
-      {/* Announcement Bar */}
-      {/* <div className="bg-tertiary text-on-tertiary py-3 px-6 text-center font-label font-bold tracking-widest text-xs sm:text-sm uppercase">
-        COURSE CLOSED ON 08-07-2024 DUE TO ROAD RACE
-      </div> */}
+      <NotificationBanner notification={notification} />
 
       {/* Hero Section */}
       <section className="relative min-h-[450px] lg:min-h-[550px] flex items-center px-6 lg:px-24 mb-12 overflow-hidden">
@@ -139,6 +145,8 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      <EventsSection events={upcomingEvents} />
 
       {/* The Legacy of the Pines */}
       <section className="bg-surface-container-low py-24 mb-16">

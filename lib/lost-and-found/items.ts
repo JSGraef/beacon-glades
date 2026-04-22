@@ -1,4 +1,4 @@
-import { getJson, listPathnames, putJson } from "./storage";
+import { getJson, listPathnames, putJson } from "@/lib/blob";
 import { ITEMS_PREFIX, itemBlobPath, newSlug } from "./slug";
 import {
   itemSchema,
